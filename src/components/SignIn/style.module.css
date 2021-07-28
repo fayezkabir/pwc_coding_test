@@ -1,0 +1,42 @@
+.form {
+    border: 1px solid #ccc;
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+label {
+    color: #666666;
+    text-transform: capitalize;
+    text-align: left;
+    margin-right: 10px;
+    width: 30%;
+}
+input {
+    padding: 5px 10px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    box-decoration-break: 0px 2px 3px rgba(0,0,0,0.2);
+    width: 70%;
+}
+button {
+    padding: 8px 22px;
+    border-radius: 8px;
+    background-color: #495be4;
+    color: #fff;
+    border: 1px solid #fff;
+
+}
+button:disabled,
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+p{
+    margin: 0 0 30px 0px ;
+    text-align: center;
+    color: red;
+}
+.success {
+    color: green
+}
