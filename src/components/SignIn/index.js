@@ -55,35 +55,41 @@ const SignInForm = props => {
     console.log(userState, "userstate");
     return (
         <Fragment>
-            {
-                isSuccess ?
-                    <h1>SuccessFully registered</h1>
-                    : (
-                        <form onSubmit={handleButtonClick} className={styles.form}>
-                            <h1>signin form</h1>
-                            <div>
-                                <label>first name</label>
-                                <input onChange={(e) => handleValueChange(e)} value={userState.firstName} name="firstName" required type="text" />
-                            </div>
-                            <div>
-                                <label>last name</label>
-                                <input onChange={(e) => handleValueChange(e)} value={userState.lastName} name="lastName" required type="text" />
-                            </div>
-                            <div>
-                                <label>user name</label>
-                                <input onChange={(e) => handleValueChange(e)} value={userState.userName} name="userName" required type="text" />
-                                {userState.userName ? (isValidUserName === true ? <p className={styles.success}>{userState.userName} - is your user name</p> : <p>This username is taken</p>) : ""}
-                            </div>
-                            <div>
-                                <label>password</label>
-                                <input minLength={8} maxLength={20} onChange={(e) => handleValueChange(e)} value={userState.password} name="password" required type="password" />
-                                {<p>{userState.password && (userState.password.match(passwRegex) ? "" : "password should include capital and a Number")}</p>}
-                            </div>
-                            <button disabled={checkButtonDisable()} type="submit">submit</button>
-                        </form>
+            <div className={styles.container}>
+                {
+                    isSuccess ?
+                        <h1>SuccessFully registered</h1>
+                        : (
+                            <form onSubmit={handleButtonClick} className={styles.form}>
+                                <h1>signin form</h1>
+                                <div>
+                                    <label>first name</label>
+                                    <input onChange={(e) => handleValueChange(e)} value={userState.firstName} name="firstName" required type="text" />
+                                </div>
+                                <div>
+                                    <label>last name</label>
+                                    <input onChange={(e) => handleValueChange(e)} value={userState.lastName} name="lastName" required type="text" />
+                                </div>
+                                <div>
+                                    <label>user name</label>
+                                    <input onChange={(e) => handleValueChange(e)} value={userState.userName} name="userName" required type="text" />
+                                    {userState.userName ? (isValidUserName === true ? <p className={styles.success}>{userState.userName} - is your user name</p> : <p>This username is taken</p>) : ""}
+                                </div>
+                                <div>
+                                    <label>password</label>
+                                    <input minLength={8} maxLength={20} onChange={(e) => handleValueChange(e)} value={userState.password} name="password" required type="password" />
+                                    {<p>{userState.password && (userState.password.match(passwRegex) ? "" : "password should include capital and a Number")}</p>}
+                                </div>
+                                <div className={styles.btnWrapper}>
+                                    <button disabled={checkButtonDisable()} type="submit">submit</button>
 
-                    )
-            }
+                                </div>
+                            </form>
+
+                        )
+                }
+
+            </div>
         </Fragment>
 
 

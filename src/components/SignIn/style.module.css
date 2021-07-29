@@ -1,42 +1,81 @@
 .form {
-    border: 1px solid #ccc;
-    max-width: 500px;
-    margin: 0 auto;
-
+  border: 1px solid #ccc;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 30%);
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.03);
+}
+.container {
+  margin-top: 10vh;
+  min-height: 100vh;
 }
 label {
-    color: #666666;
-    text-transform: capitalize;
-    text-align: left;
-    margin-right: 10px;
-    width: 30%;
+  color: #666666;
+  text-transform: capitalize;
+  text-align: left;
+  margin-right: 10px;
+  display: block;
+  font-size: 12px;
+  /* color: #000; */
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 input {
-    padding: 5px 10px;
-    margin-bottom: 24px;
-    border-radius: 4px;
-    box-decoration-break: 0px 2px 3px rgba(0,0,0,0.2);
-    width: 70%;
+  padding: 5px 0px;
+  margin-bottom: 14px;
+  border-radius: 4px;
+  box-decoration-break: 0px 2px 3px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  border-radius: 0;  
+  font-weight: 400;
+  background-color: transparent
 }
-button {
-    padding: 8px 22px;
-    border-radius: 8px;
-    background-color: #495be4;
-    color: #fff;
-    border: 1px solid #fff;
+input:focus {
+  border: none;
+  border-bottom: 2px solid #495be4;
+  outline: none;
+  background-color: #fff;
+  border-radius: 5px;  
+}
 
+button {
+  padding: 8px 22px;
+  border-radius: 8px;
+  background-color: #495be4;
+  color: #fff;
+  border: 1px solid #fff;
 }
 button:disabled,
-button[disabled]{
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
-p{
-    margin: 0 0 30px 0px ;
-    text-align: center;
-    color: red;
+p {
+  margin: 0 0 15px 0px;
+  text-align: left;
+  font-size: 10px;
+  color: red;
+}
+h1 {
+  margin-top: 0;
+  text-transform: capitalize;
+  color:  #495be4;
 }
 .success {
-    color: green
+  color: green;
+}
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    margin: auto 20px;
+  }
 }
